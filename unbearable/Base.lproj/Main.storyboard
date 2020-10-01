@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097.3"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -10,9 +11,9 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="unbearable" id="1Xt-HY-uBw">
+                            <menuItem title="MacBikeTrainer" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="unbearable" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="MacBikeTrainer" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
                                         <menuItem title="About GameTemplate" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="unbearable" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -683,12 +684,12 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="unbearable" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="MacBikeTrainer" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-			<connections>
+                        <connections>
                             <outlet property="delegate" destination="B8D-0N-5wS" id="98r-iN-zZc"/>
                         </connections>
                     </window>
@@ -703,16 +704,123 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target"  sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl" customClass="SKView">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="unbearable" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAA-Lx-rb1">
+                                <rect key="frame" x="24" y="319" width="289" height="175"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="000" placeholderString="000" id="U2b-WG-xUN">
+                                    <font key="font" metaFont="system" size="147"/>
+                                    <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <action selector="powerLabel:" target="m2S-Jp-Qdl" id="jOY-bf-QD9"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TAi-fd-idj">
+                                <rect key="frame" x="18" y="502" width="194" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="WHEEL REVOLUTIONS" id="8oq-fc-Io8">
+                                    <font key="font" metaFont="system" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1iW-1Q-VVa">
+                                <rect key="frame" x="18" y="120" width="276" height="162"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="000" id="R4d-ce-dqH">
+                                    <font key="font" metaFont="system" size="144"/>
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9As-pW-Ecl">
+                                <rect key="frame" x="317" y="138" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="bpm" id="OFA-Rx-AiD">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tno-Bm-WgB">
+                                <rect key="frame" x="315" y="347" width="80" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="rev" id="YQZ-Jl-qRx">
+                                    <font key="font" metaFont="system" size="30"/>
+                                    <color key="textColor" name="systemBlueColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DgU-UM-InZ">
+                                <rect key="frame" x="18" y="290" width="71" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="HR BPM" id="M0Y-fC-mtm">
+                                    <font key="font" metaFont="system" size="18"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField wantsLayer="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Yb-Er-6na">
+                                <rect key="frame" x="18" y="540" width="189" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" lineBreakMode="truncatingTail" alignment="center" title="Searching" id="dp9-5s-Ng1">
+                                    <font key="font" metaFont="system" size="25"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <contentFilters>
+                            <ciFilter name="CIBokehBlur">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputRadius" value="0.0"/>
+                                    <real key="inputRingAmount" value="0.0"/>
+                                    <real key="inputRingSize" value="0.10000000000000001"/>
+                                    <real key="inputSoftness" value="1"/>
+                                </configuration>
+                            </ciFilter>
+                        </contentFilters>
+                        <backgroundFilters>
+                            <ciFilter name="CIBokehBlur">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputRadius" value="5"/>
+                                    <real key="inputRingAmount" value="0.0"/>
+                                    <real key="inputRingSize" value="0.10000000000000001"/>
+                                    <real key="inputSoftness" value="10"/>
+                                </configuration>
+                            </ciFilter>
+                        </backgroundFilters>
+                        <animations>
+                            <caTransition key="subviews">
+                                <mutableData key="keyedArchiveRepresentation">
+YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
+S2V5ZWRBcmNoaXZlctEICVRyb290gAGnCwwTFA0ZH1UkbnVsbNMNDg8QERJUdHlwZVYkY2xhc3NfEBJf
+X0NBQ29kaW5nQ29udGVudHOAAoAGgANUZmFkZdIVDhYYWk5TLm9iamVjdHOhF4AEgAXSGhscHVokY2xh
+c3NuYW1lWCRjbGFzc2VzV05TQXJyYXmiHB5YTlNPYmplY3TSGhsgIVxDQVRyYW5zaXRpb26jIiMeXENB
+VHJhbnNpdGlvbltDQUFuaW1hdGlvbgAIABEAGgAkACkAMgA3AEkATABRAFMAWwBhAGgAbQB0AIkAiwCN
+AI8AlACZAKQApgCoAKoArwC6AMMAywDOANcA3ADpAO0A+gAAAAAAAAIBAAAAAAAAACQAAAAAAAAAAAAA
+AAAAAAEGA
+</mutableData>
+                            </caTransition>
+                        </animations>
                     </view>
                     <connections>
+                        <outlet property="dataLabel" destination="uAA-Lx-rb1" id="gpW-ha-ckD"/>
+                        <outlet property="heartRateLabel" destination="1iW-1Q-VVa" id="7sG-Cl-s3d"/>
+                        <outlet property="powerLabel" destination="6Yb-Er-6na" id="MFa-MV-BW8"/>
                         <outlet property="skView" destination="m2S-Jp-Qdl" id="qux-te-cT3"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <userDefaultsController representsSharedInstance="YES" id="UxA-1U-zEh"/>
             </objects>
             <point key="canvasLocation" x="75" y="817"/>
         </scene>
